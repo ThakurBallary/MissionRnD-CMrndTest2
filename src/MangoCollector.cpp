@@ -84,24 +84,19 @@ void insertInto2DArr(int **arr2, int *row, int *path, int *i) {
 	}
 }
 
-void all_k_paths(struct node *startcity, int k, int *path, int *i, int *sum, int **arr2, int *row) {
+int all_k_paths(struct node *startcity, int k, int sum) {//int *path, int *i, int **arr2, int *row) {
 	if (isLeaf(startcity)) {
-		*sum += startcity->data;
-		if (*sum == k) {
-			path[*i] = startcity->data;
-			(*i)++;
-			insertInto2DArr(arr2, row, path, i);
-			(*row)++;
-			return;
+		sum += startcity->data;
+		if (sum == k) {
+			return 1;
 		}
-		return;
+		return 0;
 	}
-	*sum += startcity->data;
-	path[*i] = startcity->data;
-	(*i)++;
-	if_k(startcity->left, k, path, i, sum, arr2, row);
-	if_k(startcity->right, k, path, i, sum, arr2, row);
+	sum += startcity->data;
 	
+	int left = all_k_paths(startcity->left, k, sum);
+	int right =	all_k_paths(startcity->right, k, sum);
+	return left + right;	
 }
 
 int mangocity_count_ways(struct node *startcity,int k, int *shortestpath,int *shortestpathlen){
@@ -111,6 +106,7 @@ int mangocity_count_ways(struct node *startcity,int k, int *shortestpath,int *sh
 	}
 	
 	//2d array
+	/*
 	int **arr2 = (int**)malloc(sizeof(int*) * 1000);
 	for (int i = 0; i < 1000; i++) {
 		arr2[i] = (int*)malloc(sizeof(int) * 1000);
@@ -120,13 +116,16 @@ int mangocity_count_ways(struct node *startcity,int k, int *shortestpath,int *sh
 
 	int	*path = (int*)malloc(sizeof(int) * 1000);
 	int i = 0;
+	*/
+	
 	int sum = 0;
-	all_k_paths(startcity, k, path, &i, &sum, arr2, &row);
+	int ways = all_k_paths(startcity, k, sum);
 	/*
 	for (int j = 0; j < row; j++) {
 		for (int l = 0; l < 10; l++) {
-			printf("%d ", )
+			printf("%d ", arr2[j][l]);
 		}
 	}
 	*/
+	return ways;
 }

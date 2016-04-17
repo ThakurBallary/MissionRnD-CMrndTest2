@@ -1,20 +1,10 @@
-﻿Build started 17-04-2016 15:19:47.
-     1>Project "C:\Users\Abhijtih\Documents\Thakur Projects\CMrndTest2\spec\spec.vcxproj" on node 2 (Build target(s)).
+﻿Build started 17-04-2016 15:34:15.
+     1>Project "C:\Users\Abhijtih\Documents\Thakur Projects\CMrndTest2\spec\spec.vcxproj" on node 3 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\spec.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib CommonRouteSpec.cpp MangoCollectorSpec.cpp OddEvenSpec.cpp
-         CommonRouteSpec.cpp
-     1>CommonRouteSpec.cpp(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>CommonRouteSpec.cpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\spec.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib MangoCollectorSpec.cpp
          MangoCollectorSpec.cpp
      1>MangoCollectorSpec.cpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
      1>MangoCollectorSpec.cpp(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-         OddEvenSpec.cpp
-     1>OddEvenSpec.cpp(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>OddEvenSpec.cpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-         Generating Code...
-     1>c:\users\abhijtih\documents\thakur projects\cmrndtest2\spec\oddevenspec.cpp(72): warning C4715: 'spec::OddEvenSpec::is_correct' : not all control paths return a value
-     1>c:\users\abhijtih\documents\thakur projects\cmrndtest2\src\mangocollector.cpp(126): warning C4715: 'mangocity_count_ways' : not all control paths return a value
-     1>c:\users\abhijtih\documents\thakur projects\cmrndtest2\src\commonroute.cpp(57): warning C4715: 'find_common_route' : not all control paths return a value
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Abhijtih\Documents\Thakur Projects\CMrndTest2\Debug\spec.dll" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Abhijtih\Documents\Thakur Projects\CMrndTest2\Debug\spec.pdb" /HEAP:"10000000","100000" /STACK:"10000000","100000" /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 /SAFESEH /DLL Debug\app.res
          Debug\AssemblyInfo.obj
@@ -29,4 +19,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.68
+Time Elapsed 00:00:02.21
