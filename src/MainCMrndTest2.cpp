@@ -42,17 +42,62 @@ struct node{
 };
 
 //Helper Functions Start
+struct oddevennode * createNode(int num) {
+	struct oddevennode *newNode = (struct oddevennode *)malloc(sizeof(struct oddevennode));
+	newNode->data = num;
+	newNode->next = NULL;
+	newNode->random = NULL;
+	return newNode;
+}
 
+void addNode(struct oddevennode **head, int data){
+	struct oddevennode * cur = createNode(data);
+	if (*head == NULL){
+		*head = cur;
+	}
+	else{
+		struct oddevennode *temp = *head;
+		cur->next = temp;
+		*head = cur;
+	}
+}
+
+void print(struct oddevennode* head) {
+	while (head) {
+		printf("%d ", head->data);
+		head = head->random;
+	}
+}
 
 //Helper Functions End
 
 int main(){
 	
 	//Test Odd Even SLL
+	/*
+	struct oddevennode *head = NULL;
+	printf("%d \n", (-1 % 2));
+	int nums[] = { -1, -2, 10, 3, 6, 5, 8, 1, 3 };
+	int len = sizeof(nums) / sizeof(nums[0]);
+	for (int i = len - 1; i >= 0; i--){
+		addNode(&head, nums[i]);
+	}
+	int *result = (int*)malloc(sizeof(int) * 2);
+	result = oddeven_sll(head);
+	print(head);
+	printf("\n");
+	print(head->next);
+	printf("\n");
+	printf("%d %d ", result[0], result[1]);
+	*/
 
 	//Test CommonRoute
 
+
 	//MangoCollector
 	
+
 	//Test Pillars
+
+	return 0;
 }

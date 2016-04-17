@@ -38,7 +38,50 @@ struct oddevennode{
 
 };
 
-int * oddeven_sll(struct oddevennode *head){
+void modifySll(struct oddevennode * head, int *oddcount, int *evencount) {
+	if (!head) {
+		return;
+	}
+	struct oddevennode *temp = head;
+	struct oddevennode *odd = NULL;
+	struct oddevennode *even = NULL;
+	while (temp) {
+		if ((temp->data) % 2 == 1 || (temp->data) % 2 == -1) {
+			(*oddcount)++;
+			if (!odd) {
+				odd = temp;
+			}
+			else {
+				odd->random = temp;
+				odd = odd->random;
+			}			
+		}
+		else {
+			(*evencount)++;
+			if (!even) {
+				even = temp;
+			}
+			else {
+				even->random = temp;
+				even = even->random;
+			}			
+		}
+		temp = temp->next;
+	}
+}
 
-	return NULL;
+int * oddeven_sll(struct oddevennode *head){
+	if (!head) {
+		return NULL;
+	}
+	int oddcount = 0;
+	int evencount = 0;
+	//struct oddevennode *modifiedHead = NULL;
+	//modifiedHead = modifySll(head, &oddcount, &evencount);
+	modifySll(head, &oddcount, &evencount);
+	int *count = (int*)malloc(sizeof(int) * 2);
+	//printf("%d %d\n", oddcount, evencount);
+	count[0] = oddcount;
+	count[1] = evencount;
+	return count;
 }

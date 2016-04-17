@@ -68,7 +68,65 @@ struct node{
 	struct node *right;
 };
 
+int isLeaf(struct node *root) {
+	if (!root->left && !root->right) {
+		return 1;
+	}
+	return 0;
+}
+
+void insertInto2DArr(int **arr2, int *row, int *path, int *i) {
+	if (!path || *row < 0 || *i < 0) {
+		return;
+	}
+	for (int j = 0; j < *i; j++) {
+		*(*(arr2 + *row * 1000) + j) = path[j];
+	}
+}
+
+void all_k_paths(struct node *startcity, int k, int *path, int *i, int *sum, int **arr2, int *row) {
+	if (isLeaf(startcity)) {
+		*sum += startcity->data;
+		if (*sum == k) {
+			path[*i] = startcity->data;
+			(*i)++;
+			insertInto2DArr(arr2, row, path, i);
+			(*row)++;
+			return;
+		}
+		return;
+	}
+	*sum += startcity->data;
+	path[*i] = startcity->data;
+	(*i)++;
+	if_k(startcity->left, k, path, i, sum, arr2, row);
+	if_k(startcity->right, k, path, i, sum, arr2, row);
+	
+}
+
 int mangocity_count_ways(struct node *startcity,int k, int *shortestpath,int *shortestpathlen){
 	//Just Copy values in shortestpath and shortestpathlen .Dont allocate memory for it .
-	return -1;
+	if (!startcity) {
+		return -1;
+	}
+	
+	//2d array
+	int **arr2 = (int**)malloc(sizeof(int*) * 1000);
+	for (int i = 0; i < 1000; i++) {
+		arr2[i] = (int*)malloc(sizeof(int) * 1000);
+	}
+	int row = 0;
+	
+
+	int	*path = (int*)malloc(sizeof(int) * 1000);
+	int i = 0;
+	int sum = 0;
+	all_k_paths(startcity, k, path, &i, &sum, arr2, &row);
+	/*
+	for (int j = 0; j < row; j++) {
+		for (int l = 0; l < 10; l++) {
+			printf("%d ", )
+		}
+	}
+	*/
 }

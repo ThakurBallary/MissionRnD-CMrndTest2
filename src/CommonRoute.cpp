@@ -50,6 +50,9 @@ First Island in DTD ie 'D' occurs alphabatically before 'H' and 'Z')
 
 
 char * find_common_route(char * hacklist, char *codelist, int *cost){
-	return NULL;
+	if (!hacklist || !codelist) {
+		return NULL;
+	}
+	
 }
 
