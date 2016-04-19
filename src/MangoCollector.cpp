@@ -75,6 +75,58 @@ int isLeaf(struct node *root) {
 	return 0;
 }
 
+int collected_k_mangoes(int k, int collected_mangoes) {
+	if (k == collected_mangoes) {
+		return 1;
+	}
+	return 0;
+}
+
+int isShortestPath(int i, int *pathlen) {
+	if (i < *pathlen) {
+		return 1;
+	}
+	return 0;
+}
+
+int get_ways_and_shortest_path(struct node *startcity, int k, int sum, int *path, int i, int *pathlen) {
+	if (!startcity) {
+		return 0;
+	}
+	sum += startcity->data;
+	path[i++] = startcity->data;
+	if (isLeaf(startcity)) {
+		if (collected_k_mangoes(k, sum)) {
+			if (isShortestPath(i, pathlen)) {
+				*pathlen = i;
+			}
+			return 1;
+		}
+		return 0;
+	}	
+	int left = get_ways_and_shortest_path(startcity->left, k, sum, path, i, pathlen);
+	int right = get_ways_and_shortest_path(startcity->right, k, sum, path, i, pathlen);
+	return left + right;
+}
+
+int mangocity_count_ways(struct node *startcity, int k, int *shortestpath, int *shortestpathlen){
+	//Just Copy values in shortestpath and shortestpathlen .Dont allocate memory for it .
+	if (!startcity) {
+		return -1;
+	}
+	int sum = 0;
+	int *path = (int*)malloc(sizeof(int) * 1000);
+	int i = 0;
+	int pathlen = 1000;	
+	int ways = get_ways_and_shortest_path(startcity, k, sum, path, i, &pathlen);
+	for (int i = 0; i < pathlen; i++) {
+		shortestpath[i] = path[i];
+	}
+	*shortestpathlen = pathlen;
+	return ways;
+}
+
+/*
 void insertInto2DArr(int **arr2, int *row, int *path, int *i) {
 	if (!path || *row < 0 || *i < 0) {
 		return;
@@ -116,7 +168,7 @@ int mangocity_count_ways(struct node *startcity,int k, int *shortestpath,int *sh
 
 	int	*path = (int*)malloc(sizeof(int) * 1000);
 	int i = 0;
-	*/
+	*\/
 	
 	int sum = 0;
 	int ways = all_k_paths(startcity, k, sum);
@@ -126,6 +178,7 @@ int mangocity_count_ways(struct node *startcity,int k, int *shortestpath,int *sh
 			printf("%d ", arr2[j][l]);
 		}
 	}
-	*/
+	*\/
 	return ways;
 }
+*/
